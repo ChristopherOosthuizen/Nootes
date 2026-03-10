@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nootes"
+version = "0.1.0"
+description = "AI-powered CLI notes organizer with background daemon"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.1",
+    "watchdog>=4.0",
+    "openai>=1.40",
+    "python-dotenv>=1.0",
+    "gitpython>=3.1",
+    "python-docx>=1.1",
+    "pymupdf>=1.24",
+    "pydantic>=2.0",
+    "pillow>=10.0",
+]
+
+[project.scripts]
+nootes = "nootes.cli:cli"
+
+[tool.setuptools.packages.find]
+include = ["nootes*"]
