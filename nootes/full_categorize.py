@@ -107,7 +107,6 @@ def full_categorize(config: NootesConfig, on_progress: callable = None) -> int:
             },
         ],
         response_format=CategoryTree,
-        temperature=0.3,
     )
 
     tree = response.choices[0].message.parsed

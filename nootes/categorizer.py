@@ -105,7 +105,6 @@ class Categorizer:
                 },
             ],
             response_format=CategorizationResult,
-            temperature=0.2,
         )
         result = response.choices[0].message.parsed
         if result is None:
@@ -151,7 +150,6 @@ class Categorizer:
                 {"role": "user", "content": user_parts},
             ],
             response_format=CategorizationResult,
-            temperature=0.2,
         )
         result = response.choices[0].message.parsed
         if result is None:
@@ -210,7 +208,6 @@ class Categorizer:
                     ),
                 },
             ],
-            temperature=0.1,
             max_tokens=200,
         )
         return response.choices[0].message.content or ""
@@ -240,7 +237,6 @@ class Categorizer:
                     "content": f"Filename: {filename}\n\nContent:\n{text}",
                 },
             ],
-            temperature=0.1,
             max_tokens=150,
         )
         return response.choices[0].message.content or ""
@@ -279,7 +275,6 @@ class Categorizer:
                 },
                 {"role": "user", "content": user_parts},
             ],
-            temperature=0.1,
             max_tokens=150,
         )
         return response.choices[0].message.content or ""
